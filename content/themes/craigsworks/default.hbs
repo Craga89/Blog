@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{! Document Settings }}
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	{{! Page Meta }}
+	<title>{{meta_title}}</title>
+	<meta name="description" content="{{meta_description}}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	{{! Google Fonts }}
+	<link href="//fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Oswald" rel="stylesheet" type="text/css">
+	{{! FontAwesome icons }}
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	{{! Theme Styles CSS }}
+	<link rel="stylesheet" href="/assets/css/screen.css">
+	
+	{{! Color Scheme CSS - Uncomment the scheme you want to use }}
+	{{! <link rel="stylesheet" href="/assets/css/color-candy.css"> }}
+	{{! <link rel="stylesheet" href="/assets/css/color-mustard.css"> }}
+	<link rel="stylesheet" href="/assets/css/color-mono.css">
+
+	{{! Ghost outputs important style and meta data with this tag }}
+	{{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+	<!--[if lt IE 7]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+	<div class="site">
+
+		{{! Include header partial }}
+		{{> header}}
+
+		{{! Include body content }}
+		{{{body}}}
+
+		{{! Include footer partial }}
+		{{> footer}}		
+
+	</div><!-- .site -->
+
+	{{! Ghost outputs important scripts and data with this tag }}
+	{{ghost_foot}}
+
+	<!-- Include Scripts -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.1/masonry.pkgd.js"></script>
+	<script src="/assets/js/jquery.fitvids.js"></script>
+	{{#if @blog.cover}}
+		<script src="/assets/js/jquery.backstretch.min.js"></script>
+	{{/if}}
+
+	<script>
+		(function($) {
+		"use strict";
+			
+			{{! Load fitVids to make videos responsive }}
+			$(".post-content").fitVids();
+
+			{{#if @blog.cover}}
+				{{! If we have a blog cover, stretch it to the cover area }}
+				$("#site-cover-container").backstretch("{{@blog.cover}}");
+			{{/if}}	
+
+			$('.site-content').masonry({
+				columnWidth: $('.post:eq(1)')[0],
+				itemSelector: '.post-container'
+			});
+
+		})(jQuery);
+	</script>
+
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-5228245-11');ga('send','pageview');
+        </script>
+</body>
+</html>

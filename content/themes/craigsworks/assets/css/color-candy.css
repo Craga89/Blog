@@ -1,0 +1,98 @@
+/* Body background and text color */
+body {
+	background: #caf5f1;
+	color: #356c67;
+}
+
+/* General link color */
+a,
+a:visited {
+	color: #ea3556;
+}
+
+a:hover {
+	color: #edde45;
+}
+
+/* Buttons color */
+.button,
+.button:visited {
+	background-color: #ea3556;
+	color: #fff;
+}
+
+.button:hover {
+	background-color: #edde45;
+	color: #fff;
+}
+
+/* Site top bar */
+.top-bar {
+	background: #ea3556;
+}
+
+.site-description {
+	color: #fff;
+}
+
+.social-links a {
+	color: #fff;
+}
+
+.social-links a:hover {
+	color: #edde45;
+}
+
+/* Site cover */
+.site-cover {
+	background-color: #edde45;
+}
+
+.site-cover a {
+	color: #fff;
+}
+
+/* Post styling */
+.post {
+	background: #fff;
+}
+
+.post-time {
+	color: #61d2d6;
+}
+
+/* Post icons */
+.post-time i,
+.post-tags i,
+.post-author i {
+	color: #ea3556;
+}
+
+.post-meta {
+	color: #61d2d6;
+	border-top: 1px solid #a3e0db;
+}
+
+.post-author {
+	color: #ea3556;
+}
+
+.author-info {
+	background: #ea3556;
+	color: #fff;
+}
+
+.author-info i {
+	color: #fff;
+}
+
+/* Pagination text color */
+.pagination {
+	color: #61d2d6;
+}
+
+/* Footer text and border color */
+.site-footer {
+	border-top: 1px solid #a3e0db;
+	color: #61d2d6;
+}

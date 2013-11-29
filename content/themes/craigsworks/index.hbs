@@ -1,0 +1,25 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+	the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Include site-cover partial }}
+{{> site-cover}}
+
+<div class="site-content container">
+	{{#foreach posts}}
+
+		{{#if @first}}
+			{{> full-post}}
+		{{else}}
+			{{> excerpt-post}}
+		{{/if}}
+
+	{{/foreach}}
+
+	<div class="pagination">
+		{{!! After all the posts, we have the previous/next pagination links }}
+		{{pagination}}
+	</div>
+
+</div><!-- .site-content -->

@@ -1,0 +1,18 @@
+	<div class="post-container post-container-excerpt">
+		<article class="{{post_class}} post-excerpt">
+		<div class="post-media">{{content words="0"}}</div>
+		<header class="post-header">
+			<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+			<time class="post-time lined-block" datetime="{{date format='YYYY-MM-DD'}}"><span><i class="fa fa-clock-o"></i>{{date format="DD MMM YYYY"}}</span></time>
+		</header>
+		<div class="post-content">
+			<p>{{excerpt}}</p>
+			<p class="post-more"><a class="button button-block" href="{{url}}">Read more <i class="fa fa-angle-double-right"></i></a></p>
+		</div>
+		{{#if tags}}
+			<div class="post-meta">
+				<p class="post-tags"><i class="fa fa-tags"></i> {{tags}}</p>
+			</div>
+		{{/if}}
+		</article><!-- .post -->
+	</div>

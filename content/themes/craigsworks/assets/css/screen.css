@@ -1,0 +1,1024 @@
+/* ==========================================================================
+   Table of Contents
+   ========================================================================== */
+/*
+
+	1. Normalize and default styling of elements
+	2. General
+	3. Header
+	4. Posts
+	5. Pagination
+	6. Footer
+	7. CSS Animate
+	8. Media Queries
+
+ */
+
+
+/* ==========================================================================
+   1. Normalize and default styling of elements
+   ========================================================================== */
+
+/* User border-box box-sizing for all elements */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
+
+/* Font sizes are calculated based on a 16-pixel base.
+ * 17 / 16 = 1.0675rem
+ * 16 / 16 = 1rem
+ * 15 / 16 = 0.9375rem
+ */
+
+html {
+	font-size: 16px;
+}
+
+/* Body */
+
+body {
+	overflow-x: hidden;
+	width: 100%;
+	font: normal normal normal 1rem/1.5rem 'Roboto', sans-serif;
+	color: #3d4651;
+	background: #f5f5f5;
+	margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+summary,
+time {
+	display: block;
+}
+
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden] {
+	display: none;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+	font-family: 'Roboto', sans-serif;
+}
+
+blockquote.twitter-tweet{
+        min-height: 184px;
+}
+
+iframe.twitter-tweet{
+	min-width: 100% !important;
+	max-width: none !important;
+	margin-bottom: 25px !important;
+}
+
+/* Links */
+
+a,
+a:visited {
+	color: #00b5b5;
+	text-decoration: none;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:active {
+	color: #3d4651;
+	outline: 0;
+}
+
+a:hover {
+	color: #f1654c;
+}
+
+/* Headings
+ * Uses "Oswald" font-family loaded from google.com/webfonts
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	line-height: 1.3;
+}
+
+h1 {
+	font-size: 2.8rem;
+	margin: 30px 0;
+}
+
+h2 {
+	font-size: 2rem;
+	margin: 25px 0;
+}
+
+h3 {
+	font-size: 1.7rem;
+	margin: 20px 0;
+}
+
+h4 {
+	font-size: 1.2rem;
+	margin: 15px 0;
+}
+
+h5 {
+	font-size: 1.1rem;
+	margin: 10px 0;
+}
+
+h6 {
+	font-size: 1rem;
+	margin: 10px 0;
+}
+
+address {
+	font-style: italic;
+	margin: 0 0 24px;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+p {
+	margin: 0 0 24px;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, serif;
+	font-size: 0.9rem;
+	-webkit-hyphens: none;
+	-moz-hyphens:    none;
+	-ms-hyphens:     none;
+	hyphens:         none;
+}
+
+pre {
+	background: #f5f5f5;
+	color: #666;
+	font-family: monospace;
+	margin: 20px 0;
+	overflow: auto;
+	padding: 20px;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+/* Quotes */
+
+blockquote,
+q {
+	-webkit-hyphens: none;
+	-moz-hyphens:    none;
+	-ms-hyphens:     none;
+	hyphens:         none;
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+blockquote {
+	font-size: 1.15rem;
+	font-style: italic;
+	font-weight: 300;
+	margin: 24px 40px;
+}
+
+blockquote blockquote {
+	margin-right: 0;
+}
+
+blockquote cite,
+blockquote small {
+	font-size: 1rem;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+blockquote em,
+blockquote i {
+	font-style: normal;
+	font-weight: 300;
+}
+
+blockquote strong,
+blockquote b {
+	font-weight: 400;
+}
+
+small {
+	font-size: smaller;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+dl {
+	margin: 0 20px;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 0 20px;
+}
+
+/* Lists */
+
+ol,
+ul {
+	margin: 16px 0;
+	padding: 0 0 0 40px;
+}
+
+ul {
+	list-style-type: square;
+}
+
+ul ul {
+	list-style-type: circle;
+}
+
+nav ul,
+nav ol {
+	list-style: none;
+	list-style-image: none;
+}
+
+li > ul,
+li > ol {
+	margin: 0;
+}
+
+img {
+	-ms-interpolation-mode: bicubic;
+	border: 0;
+	vertical-align: middle;
+	max-width: 100%;
+	height: auto;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 0;
+}
+
+/* Forms */
+
+form {
+	margin: 0;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+	white-space: normal;
+}
+
+button,
+input,
+select,
+textarea {
+	font-size: 100%;
+	margin: 0;
+	max-width: 100%;
+	vertical-align: baseline;
+}
+
+button,
+input {
+	line-height: normal;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+	cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	padding-right: 2px;
+	width: 270px;
+}
+
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
+/* Tables */
+
+table {
+	border-bottom: 1px solid #ededed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 1rem;
+	line-height: 2;
+	margin: 0 0 20px;
+	width: 100%;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+
+caption {
+	font-size: 1.1rem;
+	margin: 20px 0;
+}
+
+th {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+td {
+	border-top: 1px solid #ededed;
+	padding: 6px 10px 6px 0;
+}
+
+del {
+	color: #333;
+}
+
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+hr {
+	background: #ddd;
+	border: 0;
+	height: 1px;
+	margin: 0 0 24px;
+}
+
+.fluid-width-video-wrapper,
+iframe {
+	padding-bottom: 20px;
+}
+
+
+/* ==========================================================================
+   2. General
+   ========================================================================== */
+
+/* Container
+ * For a wider or smaller look, increase or decrease the max-width
+ */
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+/* Clearfix - For containers with floated elements */
+
+.container:after,
+.top-bar:after,
+.archive-content:after,
+.post:after,
+.author:after,
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Button Links */
+
+.button,
+.button:visited {
+	display: inline-block;
+	text-align: center;
+	background-color: #f1654c;
+	line-height: 1;
+	color: #fff;
+	padding: 12px 18px;
+}
+
+.button-block {
+	display: block;
+}
+
+.button:active {
+	background-color: #3d4651;
+}
+
+.button:hover {
+	background-color: #00b5b5;
+	color: #fff;
+}
+
+/* Lined Block - Lines on right and left side */
+
+.lined-block span {
+	display: inline-block;
+	position: relative;  
+}
+
+.lined-block span:before,
+.lined-block span:after {
+	content: "";
+	position: absolute;
+	border-top: 1px solid #ddd;
+	top: 45%;
+	width: 600px;
+}
+
+.lined-block span:before {
+	right: 100%;
+	margin-right: 15px;
+}
+
+.lined-block span:after {
+	left: 100%;
+	margin-left: 15px;
+}
+
+/* Browsehappy - Update notice for old browsers */
+
+.browsehappy {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	width: 100%;
+	padding: 5px;
+	background-color: #3d4651;
+	color: #fff;
+	font-size: 13px;
+	text-align: center;
+}
+
+
+/* ==========================================================================
+   3. Header
+   ========================================================================== */
+
+/* Horizontal bar at the top of each page */
+
+.top-bar {
+	position: relative;
+	z-index: 100;
+	background: #3d4651;
+	padding: 0px;
+	line-height: 1.4;
+}
+
+/* Site description */
+
+.site-description {
+	display: inline;
+	max-width: 68%;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 0.8rem;
+	line-height: 1.2;
+	color: #fff;
+}
+
+/* Social links */
+
+.social-links {
+	float: right;
+	width: 30%;
+	text-align: right;
+	line-height: 1;
+}
+
+.social-links a {
+	font-size: 1.4rem;
+	margin: 0 0 0 3px;	
+}
+
+/* Site Cover */
+
+.site-cover {
+	position: relative;
+	margin: 0 auto;
+	padding: 50px 10px 65px;
+	background-color: #f1654c;
+	text-align: center;
+}
+
+.site-cover a {
+	color: #fff;
+}
+
+.site-title,
+.site-logo {
+	font-size: 4rem;
+	padding: 20px 10px 25px;
+}
+
+/* Thinner Site Cover on single view posts */
+
+.post-template .site-cover {
+	padding: 10px 10px 25px;
+}
+
+.post-template .site-title {
+	font-size: 3rem;
+}
+
+
+/* ==========================================================================
+   4. Posts
+   ========================================================================== */
+.post-container {
+	width: 100%;
+	margin: 15px 0;
+}
+
+.post {
+	margin: 0 15px 0 0;
+	position: relative;
+	background: #fff;
+}
+
+/* Post Header */
+
+.post-header {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.post-title {
+	font-size: 2.3rem;
+}
+
+/* Post Time */
+
+.post-time {
+	max-width: 100%;
+	overflow: hidden;
+	line-height: 1.4;
+	color: #9e9e9e;
+}
+	
+.post-time i,
+.post-tags i,
+.post-author i {
+	color: #666;
+	margin-right: 3px;
+}
+
+.post-content {
+	margin-bottom: 26px;
+}
+
+/* Post Footer */
+
+.post-meta {
+	clear: both;
+	padding: 15px 0 0;
+	font-size: 0.75rem;
+	color: #9e9e9e;
+	border-top: 1px solid #ddd;
+}
+
+.post-meta p,
+.post-author {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+/* Author Info - Show author info on single view */
+
+.post-author {
+	position: relative;
+	margin-right: 10px;
+	cursor: pointer;
+	color: #00b5b5;
+}
+
+.author-info {
+	position: absolute;
+	bottom: 35px;
+	left: 0;
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+	width: 320px;
+	padding: 10px 20px;
+	background: #f1654c;
+	color: #fff;
+		-webkit-transition: all 0.5s ease-in-out;
+		-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out
+}
+
+.post-author:hover .author-info {
+	opacity: 1;
+	visibility: visible;
+}
+
+.author-info p {
+	display: block;
+	line-height: 1.5;
+}
+
+.author-info a,
+.author-info i {
+	color: #fff;
+}
+
+.author-info img {
+	position: absolute;
+	left: -60px;
+	top: 0;
+	width: 60px;	
+	margin-right: 20px;
+}
+
+/* Post Share Icons */
+
+.post-share {
+	text-align: right;
+	float: right;
+}
+
+.post-share i {
+	font-size: 1.2rem;
+	margin: 0 0 0 5px;
+}
+
+/* Excerpt Only Posts */
+
+.post-container-excerpt{
+}
+
+.post-excerpt {
+	font-size: 0.875rem;
+	line-height: 1.6;
+}
+
+.post-excerpt .post-content {
+	margin-bottom: 0;
+	position: relative;
+}
+
+.post-excerpt .post-title {
+	font-size: 2rem;
+}
+
+.post-excerpt .post-meta {
+	padding: 10px 0 0;
+	margin: 0;
+	text-align: center;
+	border-top: 0;
+}
+
+/* Featured media on excerpt posts - Place image/video first in content */
+
+.post-media {
+	text-align: center;
+}
+
+.post-media img {
+	margin-bottom: 10px;
+}
+
+.post-media iframe,
+.post-media video,
+.post-media embed {
+	width: 100%;
+	margin-bottom: -20px; /* Negative margin to compensate for FitVids styling */
+}
+
+/* Post Read more button */
+
+.post-more {
+	margin: 0 0 5px;
+}
+
+.post-more .button {
+	padding: 8px;
+	font-size: 0.875rem;
+}
+
+
+/* ==========================================================================
+   5. Pagination
+   ========================================================================== */
+
+.pagination {
+	clear: both;
+	text-align: center;
+	font-size: 0.875rem;
+	color: #9e9e9e;
+	padding: 10px 0;
+}
+
+.pagination .page-number {
+	font-style: italic;
+	display: inline-block;
+	margin: 0 15px;
+}
+
+
+/* ==========================================================================
+   6. Footer
+   ========================================================================== */
+
+.site-footer {
+	border-top: 1px solid #ddd;
+	padding: 15px 0;
+	font-size: 0.875rem;
+	text-align: center;
+	color: #9e9e9e;
+}
+
+
+/* ==========================================================================
+   7. CSS Animate
+   Custom build of Animate.css - .fadeInDownBig, .fadeInDown
+   To add more effects: https://github.com/daneden/animate.css
+   ========================================================================== */
+
+.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1.5s;-moz-animation-duration:1.5s;-ms-animation-duration:1.5s;-o-animation-duration:1.5s;animation-duration:1.5s;}.animated.hinge{-webkit-animation-duration:1.5s;-moz-animation-duration:1.5s;-ms-animation-duration:1.5s;-o-animation-duration:1.5s;animation-duration:1.5s;}@-webkit-keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-20px);
+	}	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(-20px);
+	}
+	
+	100% {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@-o-keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-o-transform: translateY(-20px);
+	}
+	
+	100% {
+		opacity: 1;
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fadeInDown {
+	-webkit-animation-name: fadeInDown;
+	-moz-animation-name: fadeInDown;
+	-o-animation-name: fadeInDown;
+	animation-name: fadeInDown;
+}
+@-webkit-keyframes fadeInDownBig {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-2000px);
+	}
+	
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes fadeInDownBig {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(-2000px);
+	}
+	
+	100% {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@-o-keyframes fadeInDownBig {
+	0% {
+		opacity: 0;
+		-o-transform: translateY(-2000px);
+	}
+	
+	100% {
+		opacity: 1;
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes fadeInDownBig {
+	0% {
+		opacity: 0;
+		transform: translateY(-2000px);
+	}
+	
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fadeInDownBig {
+	-webkit-animation-name: fadeInDownBig;
+	-moz-animation-name: fadeInDownBig;
+	-o-animation-name: fadeInDownBig;
+	animation-name: fadeInDownBig;
+}
+
+
+/* ==========================================================================
+   8. Media Queries
+   ========================================================================== */
+
+/* MAX WIDTH 760px */
+@media only screen and (max-width: 760px) {
+
+	/* Decrease padding of container */
+	.container {
+		padding: 10px;
+	}
+
+	/* Decrease padding of posts and author box */
+	.post {
+		padding: 10px 25px;
+	}
+
+	/* Featured image - Negative margin equals .post padding */
+	.post-media {
+		margin: -10px -25px 10px;
+	}
+
+}
+
+/* MIN WIDTH 760px */
+@media only screen and (min-width: 760px) {
+
+	/* Bigger padding on container */
+	.container {
+		padding: 20px 0;
+	}
+
+	/* Set padding on site-header element */
+	.site-header {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+/* Posts styling */
+	.post {
+		margin: 0 15px;
+		padding: 20px 50px;
+	}
+
+	/* Excerpt Only Posts - Display in 2 columns */
+
+	.post-container-excerpt {
+		width: 50%;
+	}
+
+	.post-excerpt{
+		padding: 5px 35px;
+	}
+
+	.post-container-excerpt:nth-child(even) {
+		float: left;
+		clear: left;
+	}
+
+	.post-container-excerpt:nth-child(odd) {
+		float: right;
+		clear: right;
+	}
+
+	/* Featured image - Negative margin equals .post-excerpt padding */
+	.post-media {
+		margin: -5px -35px 10px;
+	}
+
+}

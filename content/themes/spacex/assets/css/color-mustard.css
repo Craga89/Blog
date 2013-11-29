@@ -1,0 +1,90 @@
+/* Body background and text color */
+body {
+	background: #f9f8e4;
+	color: #3d4651;
+}
+
+/* General link color */
+a,
+a:visited {
+	color: #9fab5f;
+}
+
+a:hover {
+	color: #b58d2b;
+}
+
+/* Buttons color */
+.button,
+.button:visited {
+	background-color: #b58d2b;
+	color: #fff;
+}
+
+.button:hover {
+	background-color: #9fab5f;
+	color: #fff;
+}
+
+/* Site top bar */
+.top-bar {
+	background: #64532a;
+}
+
+.site-description {
+	color: #fff;
+}
+
+/* Site cover */
+.site-cover {
+	background-color: #b58d2b;
+}
+
+.site-cover a {
+	color: #fff;
+}
+
+/* Post styling */
+.post {
+	background: #fff;
+}
+
+.post-time {
+	color: #9e9e9e;
+}
+
+/* Post icons */
+.post-time i,
+.post-tags i,
+.post-author i {
+	color: #666;
+}
+
+.post-meta {
+	color: #9e9e9e;
+	border-top: 1px solid #ddd;
+}
+
+.post-author {
+	color: #9fab5f;
+}
+
+.author-info {
+	background: #b58d2b;
+	color: #fff;
+}
+
+.author-info i {
+	color: #fff;
+}
+
+/* Pagination text color */
+.pagination {
+	color: #998e74;
+}
+
+/* Footer text and border color */
+.site-footer {
+	border-top: 1px solid #e3e2c7;
+	color: #998e74;
+}

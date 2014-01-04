@@ -95,6 +95,13 @@ iframe.twitter-tweet{
 	margin-bottom: 25px !important;
 }
 
+.gist table{
+	font-size: 0.75em;
+	line-height: 1.5;
+	margin: 0;
+	border: 0;
+}
+
 /* Links */
 
 a,
